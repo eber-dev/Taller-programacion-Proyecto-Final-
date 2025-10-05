@@ -23,37 +23,43 @@ public class Login {
         return log;
     }
     
-    public void Validacion(){
+    public boolean Validacion(){
         String usuario, contraseña;
         int contador=1;
         Scanner lector  = new Scanner(System.in);
         try{
             String[] credenciales = Login.Credenciales();  
-            String usuariotexto = credenciales[0];
-            String contraseñatexto = credenciales[1];
+            String usuariotexto = credenciales[0].trim();
+            String contraseñatexto = credenciales[1].trim();
             do{
                 System.out.println("Ingrese su usuario: ");
-                usuario= lector.nextLine();
+                usuario= lector.nextLine().trim();
         
                 System.out.println("Ingrese su contraseña: ");
-                contraseña = lector.nextLine();
+                contraseña = lector.nextLine().trim();
                 
                 if(usuario.equals(usuariotexto) && contraseña.equals(contraseñatexto)){
                     System.out.println("Acceso Concedido");
-                    break;
+                    return true;
                 }else{
                     System.out.println("Acceso Denegado");
                     System.out.println("Ingrese nuevamente su usuario y contraseña");
                 }
                 contador++;
-            }while(contador<=3);
-            if(contador==3){
+            }while(contador<4);
+            
+            if(contador>3){
                 System.out.println("Demasiados intentos fallidos");
+                return false;
             } 
         }catch(FileNotFoundException e){    
             System.out.println("No se encontro el archivo: " + e.getMessage());
+            return false;
         }catch(IOException e){
             System.out.println("Error de lectura: "+ e.getMessage());
+            return false;
         }
-    }  
+        return false;
+    }
+
 }
