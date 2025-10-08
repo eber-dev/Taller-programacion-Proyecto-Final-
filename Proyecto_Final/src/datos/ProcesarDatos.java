@@ -27,11 +27,11 @@ public class ProcesarDatos {
         return organizar;   
     }
     
-    public static Map<Integer,Integer> Cuenta_Mes_Año(List<clima> datos, int year) {
+    public static Map<Integer,Integer> Cuenta_Mes_Año(List<clima> datos, int año) {
         Map<Integer,Integer> organizar = new TreeMap<>();
         for (clima c : datos) {
             int año_formato = metodos.obtener_año(c.getfecha());
-            if (año_formato == year) {
+            if (año_formato == año) {
                 int mes_formato = metodos.obtener_mes(c.getfecha());
                 organizar.put(mes_formato, organizar.getOrDefault(mes_formato,0) + 1);
             }
@@ -40,11 +40,11 @@ public class ProcesarDatos {
     }
     
     
-    public static Map<Integer,Integer> Cuenta_Mes_Temp(List<clima> datos, int year, double minTemp, double maxTemp) {
+    public static Map<Integer,Integer> Cuenta_Mes_Temp(List<clima> datos, int año, double minTemp, double maxTemp) {
         Map<Integer,Integer> organizar = new TreeMap<>();
         for (clima c : datos) {
             int año_formato = metodos.obtener_año(c.getfecha());
-            if (año_formato == year && c.gettemperatura() >= minTemp && c.gettemperatura() <= maxTemp) {
+            if (año_formato == año && c.gettemperatura() >= minTemp && c.gettemperatura() <= maxTemp) {
                 int mes_formato = metodos.obtener_mes(c.getfecha());
                 organizar.put(mes_formato, organizar.getOrDefault(mes_formato,0) + 1);
             }
@@ -53,11 +53,11 @@ public class ProcesarDatos {
     }
     
     
-    public static Map<Integer,Integer> Cuenta_Hora(List<clima> datos, int year) {
+    public static Map<Integer,Integer> Cuenta_Hora(List<clima> datos, int año) {
         Map<Integer,Integer> organizar = new TreeMap<>();
         for (clima c : datos) {
             int año_formato = metodos.obtener_año(c.getfecha());
-            if (año_formato == year) {
+            if (año_formato == año) {
                 int hora_formato = metodos.obtener_hora(c.gethora());
                 organizar.put(hora_formato, organizar.getOrDefault(hora_formato,0) + 1);
             }
