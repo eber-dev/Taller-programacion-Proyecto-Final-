@@ -17,7 +17,7 @@ import java.util.List;
 public class CSVLector {
     public static List<clima> leercsv(String lectura) throws IOException{
         List<clima> lista = new ArrayList<>();
-        FileReader archivo1 = new FileReader("C:/Users/EBER/Documents/NetBeansProjects/Taller-programacion-Proyecto-Final-/Proyecto_Final/src/datos/Variables Meteorologicas.csv");
+        FileReader archivo1 = new FileReader("C:/Users/EBER/Documents/NetBeansProjects/Taller-programacion-Proyecto-Final-/Proyecto_Final/src/datos/VariablesMeteorologicas.csv");
         BufferedReader buffer1 = new BufferedReader(archivo1);
         String linea = buffer1.readLine();
         
