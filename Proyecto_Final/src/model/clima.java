@@ -50,7 +50,7 @@ public class clima {
         return departamento; 
     }
     
-    public double getlongidud() { 
+    public double getlongitud() { 
         return longitud; 
     }
     public double getlatitud() { 
