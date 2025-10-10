@@ -46,7 +46,6 @@ public class Sistema {
                           #################################################################################################
                           """;
 
-            if(acceso){
                 do{
                     System.out.println(menu);
                     System.out.println("Ingrese un de las siguientes opciones del menu: ");
@@ -107,7 +106,7 @@ public class Sistema {
                     }
 
                 }while(opcion != 5);
-            }
+
 
             }catch(Exception e){
                 System.out.println("Ocurrió un error. Se registró en auditoria.");
